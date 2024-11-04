@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        main {
+            padding: 1em;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 1em;
+            margin-bottom: 2em;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1em;
+        }
+
+        label {
+            margin-top: 0.5em;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="time"],
+        select,
+        textarea,
+        button {
+            margin-bottom: 0.5em;
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hospital Management System</h1>
+    </header>
+    <main>
+        <section id="patients">
+            <h2>Patients</h2>
+            <form id="patientForm" action="/add_patient" method="post">
+                 <label for="patientID">Patient ID:</label>
+                <input type="number" id="patientID" name="patientID" required>
+
+                <label for="patientName">Name:</label>
+                <input type="text" id="patientName" name="patientName" required>
+                <label for="patientAge">Age:</label>
+                <input type="number" id="patientAge" name="patientAge" required>
+                <label for="patientGender">Gender:</label>
+                <select id="patientGender" name="patientGender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <label for="patientMedicalHistory">Medical History:</label>
+                <textarea id="patientMedicalHistory" name="patientMedicalHistory" rows="4" required></textarea>
+                <button type="submit">Add Patient</button>
+            </form>
+        </section>
+        
+        <section id="doctors">
+            <h2>Doctors</h2>
+            <form id="doctorForm" action="/add_doctor" method="post">
+                <label for="doctorID">Doctor ID:</label>
+                <input type="number" id="doctorID" name="doctorID" required>
+                <label for="doctorName">Name:</label>
+                <input type="text" id="doctorName" name="doctorName" required>
+                <label for="doctorSpecialization">Specialization:</label>
+                <input type="text" id="doctorSpecialization" name="doctorSpecialization" required>
+                <button type="submit">Add Doctor</button>
+            </form>
+        </section>
+        
+        <section id="appointments">
+            <h2>Appointments</h2>
+            <form id="appointmentForm" action="/add_appointment" method="post">
+                <label for="appointmentID">Appointment ID:</label>
+                <input type="number" id="appointmentID" name="appointmentID" required>
+                <label for="appointmentDate">Date:</label>
+                <input type="date" id="appointmentDate" name="appointmentDate" required>
+                <label for="appointmentTime">Time:</label>
+                <input type="time" id="appointmentTime" name="appointmentTime" required>
+                <label for="patientID">Patient ID:</label>
+                <input type="number" id="patientID" name="patientID" required>
+                <label for="doctorID">Doctor ID:</label>
+                <input type="number" id="doctorID" name="doctorID" required>
+                <button type="submit">Add Appointment</button>
+            </form>
+        </section>
+        
+        <section id="diagnosis">
+            <h2>Diagnosis</h2>
+            <form id="diagnosisForm" action="/add_diagnosis" method="post">
+                <label for="diagnosisID">Diagnosis ID:</label>
+                <input type="number" id="diagnosisID" name="diagnosisID" required>
+                <label for="diagnosisDescription">Description:</label>
+                <textarea id="diagnosisDescription" name="diagnosisDescription" rows="4" required></textarea>
+                <label for="appointmentID">Appointment ID:</label>
+                <input type="number" id="appointmentID" name="appointmentID" required>
+                <button type="submit">Add Diagnosis</button>
+            </form>
+        </section>
+        
+        <section id="treatment">
+            <h2>Treatment</h2>
+            <form id="treatmentForm" action="/add_treatment" method="post">
+                <label for="treatmentID">Treatment ID:</label>
+                <input type="number" id="treatmentID" name="treatmentID" required>
+                <label for="treatmentDescription">Description:</label>
+                <textarea id="treatmentDescription" name="treatmentDescription" rows="4" required></textarea>
+                <label for="appointmentID">Appointment ID:</label>
+                <input type="number" id="appointmentID" name="appointmentID" required>
+                <button type="submit">Add Treatment</button>
+            </form>
+        </section>
+        
+        <section id="prescription">
+            <h2>Prescription</h2>
+            <form id="prescriptionForm" action="/add_prescription" method="post">
+                <label for="prescriptionID">Prescription  ID:</label>
+                <input type="number" id="prescriptionID" name="prescriptionID" required>
+                <label for="prescriptionMedication">Medication:</label>
+                <input type="text" id="prescriptionMedication" name="prescriptionMedication" required>
+                <label for="prescriptionDosage">Dosage:</label>
+                <input type="text" id="prescriptionDosage" name="prescriptionDosage" required>
+                <label for="appointmentID">Appointment ID:</label>
+                <input type="number" id="appointmentID" name="appointmentID" required>
+                <button type="submit">Add Prescription</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
