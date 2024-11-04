@@ -1,1 +1,1 @@
-# medical-records-managment-system
+This project is a web-based Hospital Management System designed to streamline the management of patient records, doctor profiles, appointments, diagnoses, treatments, and prescriptions. Developed with Flask and MySQL, it enables efficient database operations and offers an organized, user-friendly interface for hospital administration.
